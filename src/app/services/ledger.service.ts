@@ -286,6 +286,7 @@ export class LedgerService {
    * @returns {Promise<any>}
    */
   async loadLedger(hideNotifications = false) {
+    /*
     return new Promise(async (resolve, reject) => {
 
       // Desktop is handled completely differently.  Send a message for status instead of setting anything up
@@ -402,7 +403,7 @@ export class LedgerService {
 
       return null;
     });
-
+  */
   }
 
   async updateCache(accountIndex, blockHash) {

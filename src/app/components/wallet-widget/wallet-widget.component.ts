@@ -85,6 +85,7 @@ export class WalletWidgetComponent implements OnInit {
   }
 
   async reloadLedger() {
+    /*
     this.notificationService.sendInfo(`Checking Ledger Status...`, { identifier: 'ledger-status', length: 0 });
     try {
       await this.ledgerService.loadLedger();
@@ -97,6 +98,7 @@ export class WalletWidgetComponent implements OnInit {
       this.notificationService.removeNotification('ledger-status');
       // this.notificationService.sendError(`Unable to load Ledger Device: ${err.message}`);
     }
+    */
   }
 
   allowUnlock(params: any) {

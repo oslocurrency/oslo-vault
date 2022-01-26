@@ -246,7 +246,7 @@ if (!appLock) {
     }
 
     // Check for any updates on GitHub
-    checkForUpdates();
+    //checkForUpdates();
   });
 
   // Refocus the window if the user attempts to open OsloVault while it is already open
