@@ -47,7 +47,7 @@ export class ConfigureAppComponent implements OnInit {
   selectedLanguage = this.languages[0].id;
 
   denominations = [
-    { name: 'XNO', value: 'mnano' },
+    { name: 'OSLO', value: 'mnano' },
     { name: 'knano', value: 'knano' },
     { name: 'nano', value: 'nano' },
   ];
@@ -608,7 +608,7 @@ export class ConfigureAppComponent implements OnInit {
 
       this.notifications.sendSuccess(this.translocoService.translate('configure-app.clear-all-data.successfully-deleted-locally-stored-data-and-reset-the'));
 
-      // Get a new random API server or Nault will get stuck in offline mode
+      // Get a new random API server or OsloVault will get stuck in offline mode
       this.updateServerSettings();
     } catch (err) {}
   }

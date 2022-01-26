@@ -344,20 +344,20 @@ function getAccountPublicKey(account) {
   return uint4ToHex(key_uint4);
 }
 
-function setPrefix(account, prefix = 'xrb') {
-  if (prefix === 'nano') {
-    return account.replace('xrb_', 'nano_');
+function setPrefix(account, prefix = 'oslo') {
+  if (prefix !== 'nano') {
+    return account.replace('xrb_', 'oslo_');
   } else {
-    return account.replace('nano_', 'xrb_');
+    return account.replace('nano_', 'oslo_');
   }
 }
 
 /**
  * Conversion functions
  */
-const mnano = 1000000000000000000000000000000;
-const knano = 1000000000000000000000000000;
-const nano  = 1000000000000000000000000;
+const mnano = 1;
+const knano = 1;
+const nano  = 1;
 function mnanoToRaw(value) {
   return new BigNumber(value).times(mnano);
 }
