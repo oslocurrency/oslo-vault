@@ -1,9 +1,9 @@
 {
-  "name": "nault",
+  "name": "oslovault",
   "version": "1.18.0",
   "license": "MIT",
-  "description": "Wallet for interacting with nano",
-  "author": "The Nano Community / Andrew Steele",
+  "description": "Wallet for interacting with oslo",
+  "author": "The Oslo Developers",
   "main": "desktop-app/dist/desktop-app.js",
   "scripts": {
     "ng": "ng",
@@ -108,10 +108,10 @@
     "zxcvbn3": "^0.1.1"
   },
   "build": {
-    "appId": "cc.nault",
+    "appId": "com.oslocurrency.vault",
     "buildVersion": "1.0.0",
     "productName": "OsloVault",
-    "copyright": "Copyright © 2020 The Nano Community / Andrew Steele",
+    "copyright": "Copyright © 2022 The Oslo Developers",
     "directories": {
       "output": "desktop-app/build",
       "buildResources": "desktop-app/assets",
@@ -123,9 +123,9 @@
       "extendInfo": {
         "CFBundleURLTypes": [
           {
-            "CFBundleURLName": "nano",
+            "CFBundleURLName": "oslo",
             "CFBundleURLSchemes": [
-              "nano"
+              "oslo"
             ]
           }
         ]
@@ -135,18 +135,18 @@
       "target": "AppImage",
       "icon": "desktop-app/assets/linux",
       "desktop": {
-        "GenericName": "Nano Wallet"
+        "GenericName": "Oslo Wallet"
       }
     },
     "protocols": {
-      "name": "nano",
+      "name": "oslo",
       "schemes": [
-        "nano",
-        "nanorep",
-        "nanoseed",
-        "nanokey",
-        "nanosign",
-        "nanoprocess"
+        "oslo",
+        "oslorep",
+        "osloseed",
+        "oslokey",
+        "oslosign",
+        "osloprocess"
       ],
       "role": "Viewer"
     }

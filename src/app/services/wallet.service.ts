@@ -295,6 +295,9 @@ export class WalletService {
         if (account.id.indexOf('xrb_') !== -1) {
           account.id = account.id.replace('xrb_', 'nano_');
         }
+        if (account.id.indexOf('nano_') !== -1) {
+          account.id = account.id.replace('nano_', 'oslo_');
+        }
         return account;
       });
 
@@ -396,7 +399,7 @@ export class WalletService {
     const exportData = this.generateExportData();
     const base64Data = btoa(JSON.stringify(exportData));
 
-    return `https://nault.cc/import-wallet#${base64Data}`;
+    return `https://vault.oslocurrency.com/import-wallet#${base64Data}`;
   }
 
   lockWallet() {
@@ -491,6 +494,7 @@ export class WalletService {
         } else if (this.wallet.type === 'ledger') {
           const account: any = await this.ledgerService.getLedgerAccount(index);
           accountAddress = account.address.replace('xrb_', 'nano_');
+          accountAddress = accountAddress.replace('nano_', 'oslo_');
           accountPublicKey = account.publicKey.toUpperCase();
 
         } else {
@@ -568,7 +572,7 @@ export class WalletService {
     const account: any = await this.ledgerService.getLedgerAccount(index);
 
     const accountID = account.address;
-    const nanoAccountID = accountID.replace('xrb_', 'nano_');
+    const nanoAccountID = accountID.replace('xrb_', 'nano_').replace('nano_', 'oslo_');
     const addressBookName = this.addressBook.getAccountName(nanoAccountID);
 
     const newAccount: WalletAccount = {
@@ -710,6 +714,7 @@ export class WalletService {
   }
 
   async reloadBalances() {
+    console.trace("reloading")
     // to block two reloads to happen at the same time (websocket)
     if (this.wallet.updatingBalance) return;
 

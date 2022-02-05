@@ -249,10 +249,10 @@ export class SweeperComponent implements OnInit {
   // Process final send block
   async processSend(privKey, previous, sendCallback) {
     const pubKey = nanocurrency.derivePublicKey(privKey);
-    const address = nanocurrency.deriveAddress(pubKey, {useNanoPrefix: true});
+    const address = nanocurrency.deriveAddress(pubKey, {useNanoPrefix: true}).replace('nano_', 'oslo_');
 
     // make an extra check on valid destination
-    if (this.validDestination && nanocurrency.checkAddress(this.destinationAccount)) {
+    if (this.validDestination && nanocurrency.checkAddress(this.destinationAccount.replace('oslo_', 'nano_'))) {
       this.appendLog('Transfer started: ' + address);
       const work = await this.workPool.getWork(previous, 1); // send threshold
       // create the block with the work found
