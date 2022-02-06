@@ -5,7 +5,7 @@ import {BehaviorSubject} from 'rxjs';
 @Injectable()
 export class PriceService {
   storeKey = `nanovault-price`;
-  apiUrl = `https://api.coingecko.com/api/v3/coins/nano?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`;
+  apiUrl = `https://api.coingecko.com/api/v3/coins/tether?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`;
 
   price = {
     lastPrice: 0,
@@ -25,11 +25,12 @@ export class PriceService {
     }
 
     const quote = response.market_data.current_price;
+
     const currencyPrice = quote[currency.toLowerCase()];
     const btcPrice = quote.btc;
 
-    this.price.lastPrice = currencyPrice;
-    this.price.lastPriceBTC = btcPrice;
+    this.price.lastPrice = currencyPrice * 0.01;
+    this.price.lastPriceBTC = btcPrice * 0.01;
 
     this.savePrice();
 

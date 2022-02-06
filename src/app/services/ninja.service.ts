@@ -25,7 +25,7 @@ export class NinjaService {
   }
 
   private randomizeByScore(replist: any) {
-
+/*
     const scores = {};
     const newlist = [];
 
@@ -44,26 +44,35 @@ export class NinjaService {
         }
       }
     }
-
     return newlist;
+*/
+
+    return [];
   }
 
   async recommended(): Promise<any> {
-    return await this.request('accounts/verified');
+    //return await this.request('accounts/verified');
+    return [];
   }
 
   async recommendedRandomized(): Promise<any> {
+    /*
     const replist = await this.recommended();
     return this.randomizeByScore(replist);
+    */
+    return [];
   }
 
   async getSuggestedRep(): Promise<any> {
+    /*
     const replist = await this.recommendedRandomized();
     return replist[0];
+    */
   }
 
   // false - does not exist, null - any other error
   async getAccount(account: string): Promise<any> {
+    /*
     return await this.http.get(this.ninjaUrl + 'accounts/' + account).toPromise()
       .then(res => {
         return res;
@@ -75,6 +84,7 @@ export class NinjaService {
 
         return null;
       });
+      */
   }
 
 }

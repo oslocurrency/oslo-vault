@@ -374,6 +374,7 @@ function rawToKnano(value) {
   return new BigNumber(value).div(knano);
 }
 function rawToNano(value) {
+  console.log(value)
   return new BigNumber(value).div(nano);
 }
 

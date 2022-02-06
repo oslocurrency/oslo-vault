@@ -151,6 +151,8 @@ export class ReceiveComponent implements OnInit, OnDestroy {
             a.destinationAddressBookName.localeCompare(b.destinationAddressBookName)
         );
 
+    console.log(this.pendingBlocks);
+
     this.filterPendingBlocksForDestinationAccount(this.pendingAccountModel);
   }
 

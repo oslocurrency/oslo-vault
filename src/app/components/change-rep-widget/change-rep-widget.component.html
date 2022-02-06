@@ -15,6 +15,7 @@
       <a (click)="showRepSelectionForSpecificRep(rep)" class="name">{{ rep.label || ('change-rep-widget.unknown-rep' | transloco) }}</a>
       <div class="weight-total" *ngIf="!rep.percent.isZero()">{{ rep.percent.toFixed(2) }}%</div>
     </div>
+    <!--
     <ng-container [ngSwitch]="true">
       <div class="representative-health-row health-green" *ngSwitchCase="(rep.statusText == 'trusted')">
         <div class="health-icon"></div>
@@ -37,6 +38,8 @@
         <div class="label">{{ 'change-rep-widget.unknown-status' | transloco }}</div>
       </div>
     </ng-container>
+    -->
+    <!--
     <div [class]="[ 'representative-help-tooltip', showRepHelp==rep.id ? 'visible' : 'hidden' ]">
       <p class="primary">{{ 'change-rep-widget.rep-represents-you' | transloco: { name: (rep.label || ('change-rep-widget.unknown-rep' | transloco)) } }}</p>
       <p>{{ 'change-rep-widget.you-can-change-representative-at-any-time' | transloco }}</p>
@@ -87,6 +90,7 @@
         </p>
       </ng-container>
     </div>
+      -->
   </div>
 </div>
 <ng-template #noRepresentatives>
@@ -118,6 +122,7 @@
   </ng-template>
 </ng-template>
 
+<!--
 <div class="nav-status-row interactable uk-animation-slide-left" (click)="showRepSelectionForAllChangeableReps()" *ngIf="showRepChangeRequired">
   <div class="status-icon">
     <span class="uk-text-warning" uk-icon="icon: warning; ratio: 1.2;"></span>
@@ -126,3 +131,4 @@
     <div class="label primary uk-text-warning">{{ 'change-rep-widget.representative-change-required' | transloco }}</div>
   </div>
 </div>
+-->

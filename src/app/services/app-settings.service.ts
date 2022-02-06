@@ -71,7 +71,7 @@ export class AppSettingsService {
       name: 'Official',
       value: 'official',
       api: 'https://node.oslo.vidaru.org',
-      ws: null,
+      ws: 'wss://ws.oslo.vidaru.org',
       auth: null,
       shouldRandom: true,
     },

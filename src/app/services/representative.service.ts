@@ -173,10 +173,12 @@ export class RepresentativeService {
       const nf = this.nfReps.find(bad => bad.id === representative.account);
       if (nf) {
         repStatus.markedAsNF = true;
-        repStatus.changeRequired = true;
-        repStatus.warn = true;
+        repStatus.changeRequired = false;
+        repStatus.warn = false;
         status = 'alert';
       }
+
+      console.log("HEY:", nf);
 
       if (knownRep) {
         // in the list of known representatives
@@ -457,15 +459,12 @@ export class RepresentativeService {
 
   // Default representatives list
   // tslint:disable-next-line:member-ordering
-  defaultRepresentatives = [];
+  defaultRepresentatives = [{
+      id: 'oslo_1seed49ixy6aanrc97syg4qf4z6wfjufxu6wbne7g8n9cwcx8s51eiz1jgaa',
+      name: 'Oslo Developers #1',
+  }];
 
   // Bad representatives hardcoded to be avoided. Not visible in the user rep list
   // tslint:disable-next-line:member-ordering
-  nfReps = [
-    {
-      id: 'oslo_1seed49ixy6aanrc97syg4qf4z6wfjufxu6wbne7g8n9cwcx8s51eiz1jgaa',
-      name: 'Oslo Developers #1',
-    },
-  ];
-
+  nfReps = [];
 }
