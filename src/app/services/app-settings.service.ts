@@ -70,8 +70,8 @@ export class AppSettingsService {
     {
       name: 'Official',
       value: 'official',
-      api: 'https://node.oslo.vidaru.org',
-      ws: 'wss://ws.oslo.vidaru.org',
+      api: 'https://node.oslocrypto.com',
+      ws: 'wss://ws.oslocrypto.com',
       auth: null,
       shouldRandom: true,
     },
