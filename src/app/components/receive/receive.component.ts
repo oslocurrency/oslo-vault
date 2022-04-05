@@ -70,6 +70,9 @@ export class ReceiveComponent implements OnInit, OnDestroy {
     const mobileTransactionMenuModal = UIkit.modal('#mobile-transaction-menu-modal');
     this.mobileTransactionMenuModal = mobileTransactionMenuModal;
 
+    this.pendingAccountModel = this.accounts.length ? this.accounts[0].id : '';
+    this.onSelectedAccountChange(this.pendingAccountModel);
+
     this.routerSub = this.route.events.subscribe(event => {
       if (event instanceof ChildActivationEnd) {
         this.mobileTransactionMenuModal.hide();

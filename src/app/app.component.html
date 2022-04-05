@@ -26,7 +26,6 @@
             <div class="balance primary">
               {{ wallet.selectedAccount.balance | rai: 'mnano,true' | amountsplit: 0 }}{{ wallet.selectedAccount.balance | rai: 'mnano,true' | amountsplit: 1 }} OSLO
             </div>
-            <div class="balance converted">{{ wallet.selectedAccount.balanceFiat | fiat: settings.settings.displayCurrency }}</div>
           </ng-container>
           <ng-template #balanceLoading>
             <div class="balance loading">
@@ -43,7 +42,6 @@
         <div class="balance-column">
           <ng-container *ngIf="(walletService.wallet.updatingBalance === false) else balanceLoading">
             <div class="balance primary">{{ wallet.balance | rai: 'mnano,true' | amountsplit: 0 }}{{ wallet.balance | rai: 'mnano,true' | amountsplit: 1 }} OSLO</div>
-            <div class="balance converted">{{ wallet.balanceFiat | fiat: settings.settings.displayCurrency }}</div>
           </ng-container>
           <ng-template #balanceLoading>
             <div class="balance loading">
@@ -67,7 +65,6 @@
                 </span>
                 {{ account.balance | rai: 'mnano,true' | amountsplit: 0 }}{{ account.balance | rai: 'mnano,true' | amountsplit: 1 }} OSLO
               </div>
-              <div class="balance converted">{{ account.balanceFiat | fiat: settings.settings.displayCurrency }}</div>
             </ng-container>
             <ng-template #balanceLoading>
               <div class="balance loading">
@@ -131,13 +128,6 @@
                           <div class="amount-updating" *ngIf="wallet.updatingBalance && isConfigured()"><div uk-spinner="ratio: 0.5;"></div></div>
                         </div>
                       </div>
-                      <div class="balance-container converted" *ngIf="settings.settings.displayCurrency">
-                        <div class="currency-name"><span class="estimate-symbol">~</span>{{ settings.settings.displayCurrency }}</div>
-                        <div class="amount-container">
-                          <div class="amount-integer">{{ (wallet.selectedAccount !== null ? wallet.selectedAccount.balanceFiat : wallet.balanceFiat) | fiat: settings.settings.displayCurrency | amountsplit: 0 }}</div>
-                          <div class="amount-fractional">{{ (wallet.selectedAccount !== null ? wallet.selectedAccount.balanceFiat : wallet.balanceFiat) | fiat: settings.settings.displayCurrency | amountsplit: 1 }}</div>
-                        </div>
-                      </div>
                     </ng-container>
                     <ng-template #balancesLoading>
                       <div class="spinner-container" *ngIf="(node.status !== false)">
@@ -180,13 +170,6 @@
                         <div class="amount-container">
                           <div class="amount-integer">{{ (wallet.selectedAccount ? wallet.selectedAccount.pending : wallet.pending) | rai: 'mnano,true' | amountsplit: 0 }}</div>
                           <div class="amount-fractional">{{ (wallet.selectedAccount ? wallet.selectedAccount.pending : wallet.pending) | rai: 'mnano,true' | amountsplit: 1 }}</div>
-                        </div>
-                      </div>
-                      <div class="balance-container converted" *ngIf="settings.settings.displayCurrency">
-                        <div class="currency-name"><span class="estimate-symbol">~</span>{{ settings.settings.displayCurrency }}</div>
-                        <div class="amount-container">
-                          <div class="amount-integer">{{ (wallet.selectedAccount ? wallet.selectedAccount.pendingFiat : wallet.pendingFiat) | fiat: settings.settings.displayCurrency | amountsplit: 0 }}</div>
-                          <div class="amount-fractional">{{ (wallet.selectedAccount ? wallet.selectedAccount.pendingFiat : wallet.pendingFiat) | fiat: settings.settings.displayCurrency | amountsplit: 1 }}</div>
                         </div>
                       </div>
                     </div>

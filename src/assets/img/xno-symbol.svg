@@ -1,6 +1,52 @@
-<svg width="620" height="820" fill="none" version="1.1" viewBox="0 0 620 820" xmlns="http://www.w3.org/2000/svg">
- <g transform="translate(-229.8 -130.61)" fill="#000">
-  <path d="m839.59 940.22h-62.2l-236.05-367.69-239.65 367.69h-61.686l268.59-416.56-244.67-382.66h63.411l215.01 336.58 219.56-336.58h59.497l-247.3 381.57z"/>
-  <path d="m298.99 499.31h483.62v45.456h-483.62zm0 136.37h483.64v45.457h-483.66z"/>
- </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="620"
+   height="820"
+   fill="none"
+   version="1.1"
+   viewBox="0 0 620 820"
+   id="svg8"
+   sodipodi:docname="xno-symbol.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.83170732"
+     inkscape:cx="309.60411"
+     inkscape:cy="425.6305"
+     inkscape:window-width="1920"
+     inkscape:window-height="1012"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g6" />
+  <g
+     transform="translate(-229.8 -130.61)"
+     fill="#000"
+     id="g6">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:970.742px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.697372"
+       x="200.92122"
+       y="850.80304"
+       id="text2016"
+       transform="scale(0.93232251,1.0725902)"><tspan
+         sodipodi:role="line"
+         id="tspan2014"
+         x="200.92122"
+         y="850.80304"
+         style="font-size:970.742px;stroke-width:0.697372">Ø</tspan></text>
+  </g>
 </svg>

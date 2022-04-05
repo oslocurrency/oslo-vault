@@ -72,7 +72,6 @@
                     <div uk-grid>
                       <div class="uk-width-1-1">
                         <div class="uk-inline uk-width-1-1">
-                          <a class="max-amt-button uk-form-icon uk-form-icon-flip form-icon-btn" (click)="setMaxAmount()" uk-tooltip title="Set Maximum Amount">Max</a>
                           <label class="uk-form-icon uk-link-reset uk-link-muted xno-symbol" for="form-horizontal-amount"></label>
                           <input [(ngModel)]="amount" [ngClass]="{ 'uk-form-danger': amountStatus === 0 }" style="padding-left: 52px !important;" class="uk-input" id="form-horizontal-text" (input)="syncFiatPrice()" type="number" step="any" placeholder="Amount of {{ selectedAmount.name }}" maxlength="40">
                         </div>
@@ -81,13 +80,6 @@
 
                       <div *ngIf="amountExtraRaw.gt(0)" class="amount-raw-extra uk-width-1-1 uk-text-small text-half-muted">
                         <span uk-tooltip title="Additional raw to {{ (sendDestinationType === 'own-address') ? 'transfer' : 'send' }}">+{{ amountExtraRaw.toString(10) }} raw</span> &nbsp; <a class="uk-text-danger" (click)="resetRaw()" uk-tooltip title="Remove the additional raw amount from the total amount" uk-icon="icon: close"></a>
-                      </div>
-
-                      <div class="uk-width-1-1" style="margin-top: 10px;" *ngIf="settings.settings.displayCurrency">
-                        <div class="uk-width-1-1 uk-inline">
-                          <a class="uk-form-icon uk-link-reset uk-link-muted fiat-currency-ticker" uk-tooltip title="Last Price: {{ price.price.lastPrice | fiat: settings.settings.displayCurrency }} / OSLO">{{ settings.settings.displayCurrency | currencySymbol }}</a>
-                          <input [(ngModel)]="amountFiat" (input)="syncNanoPrice()" style="padding-left: 52px !important;" class="uk-input" id="form-horizontal-text-fiat" type="number" step="any" placeholder="Amount of {{ settings.settings.displayCurrency }}">
-                        </div>
                       </div>
 
                     </div>
@@ -100,6 +92,9 @@
           </div>
           <div class="uk-card-footer">
             <div class="uk-text-right@s nlt-button-group">
+              <button class="uk-button uk-button-danger uk-width-1-1@s uk-width-auto@m uk-float-right nlt-icon-button" type="button" (click)="cancelTransaction()" *ngIf="!preparingTransaction">
+                Cancel
+              </button>
               <button class="uk-button uk-button-primary uk-width-1-1@s uk-width-auto@m uk-float-right nlt-icon-button" type="button" (click)="sendTransaction()" *ngIf="!preparingTransaction">
                 {{ (sendDestinationType === 'own-address') ? 'Transfer oslo' : 'Send oslo' }}
               </button>

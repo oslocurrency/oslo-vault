@@ -1,4 +1,4 @@
-<h2 class="uk-heading-divider">Configure Wallet</h2>
+<h2 class="uk-heading-divider">Start Wallet</h2>
 
 <div *ngIf="isConfigured() && !walletService.isLedgerWallet() && (activePanel === panels.landing || activePanel === panels.import || activePanel === panels.mnemonicTypeSelection)" class="uk-margin-small-bottom">
   <div class="uk-alert uk-alert-danger nlt-inline-alert">
@@ -41,13 +41,6 @@
         </button>
       </div>
       <div class="uk-width-expand">
-         <button class="wallet-option" (click)="setPanel(panels.import); selectedImportOption = 'seed';">
-          <div class="icon">
-            <div class="seed">{{ exampleSeed }}</div>
-          </div>
-          <h2>Import<br>Seed</h2>
-          <p>64 hex<br>characters</p>
-        </button>
         <button class="wallet-option" (click)="setPanel(panels.mnemonicTypeSelection);">
           <div class="icon">
             <div class="mnemonic">
@@ -69,8 +62,8 @@
               </div>
             </div>
           </div>
-          <h2>Import<br>Mnemonic</h2>
-          <p>12, 15, 18, 21<br>or 24 words</p>
+          <h2>Connect<br>Wallet</h2>
+          <p>Import from<br />mnemonic</p>
         </button>
         <button class="wallet-option more-options" (click)="showMoreImportOptions = true;" *ngIf="!showMoreImportOptions">
           <div class="icon">
@@ -78,6 +71,13 @@
           </div>
           <h2>More<br>Options</h2>
           <p>Import from file<br>or a private key</p>
+        </button>
+         <button class="wallet-option" (click)="setPanel(panels.import); selectedImportOption = 'seed';" *ngIf="showMoreImportOptions">
+          <div class="icon">
+            <div class="seed">{{ exampleSeed }}</div>
+          </div>
+          <h2>Import<br>Seed</h2>
+          <p>64 hex<br>characters</p>
         </button>
         <button class="wallet-option" (click)="setPanel(panels.import); selectedImportOption = 'file';" *ngIf="showMoreImportOptions">
           <div class="icon">
@@ -492,7 +492,7 @@
   </div>
   <div class="uk-card-body">
     <p>
-      Your wallet has been created and you are ready to send and receive nano!<br>
+      Your wallet has been created and you are ready to send and receive oslo!<br>
       It will lock after a certain amount of inactivity which can be changed in the <a routerLink="/configure-app" routerLinkActive="active">app settings</a>.
     </p>
   </div>

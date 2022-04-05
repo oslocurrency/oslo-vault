@@ -289,6 +289,14 @@ export class SendComponent implements OnInit {
     return this.toOwnAccountID;
   }
 
+  async cancelTransaction() {
+    this.amount = null;
+    this.amountExtraRaw = new BigNumber(0);
+    this.rawAmount = new BigNumber(0);
+    this.toAccount = false;
+    this.toAccountID = '';
+  }
+
   async sendTransaction() {
     const destinationID = this.getDestinationID();
     const isValid = this.util.account.isValidAccount(destinationID);
